@@ -12,7 +12,7 @@ conda_release:
 	fastrelease_conda_package --upload_user fastai
 
 pypi: dist
-	twine upload --repository pypi dist/*
+	twine upload --repository pypitest dist/*
 
 dist: clean
 	python setup.py sdist bdist_wheel
