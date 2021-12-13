@@ -8,7 +8,9 @@ jobs: # A basic unit of work in a run
       - image: circleci/python:3.8
     steps: # steps that comprise the `build` job
       - checkout # check out source code to working directory
-      - run: make create_env server=circleci
+      - run: conda init bash
+      - run: source ~/.bashrc
+      - run: make create_env
       - run: conda activate yaml_config_wrapper
       - run: make dist
       - run: make tests

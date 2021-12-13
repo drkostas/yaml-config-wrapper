@@ -1,6 +1,6 @@
 # YAML Config Wrapper
 
-[![CircleCI](https://circleci.com/gh/drkostas/yaml_config_wrapper/tree/master.svg?style=svg)](https://circleci.com/gh/drkostas/yaml_config_wrapper/tree/master)
+[![CircleCI](https://circleci.com/gh/drkostas/yaml-config-wrapper/tree/master.svg?style=svg)](https://circleci.com/gh/drkostas/yaml-config-wrapper/tree/master)
 [![GitHub license](https://img.shields.io/badge/license-Apache-blue.svg)](https://raw.githubusercontent.com/drkostas/yaml_config_wrapper/master/LICENSE)
 
 ## About <a name = "about"></a>
