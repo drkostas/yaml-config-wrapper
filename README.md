@@ -155,3 +155,4 @@ and for any modifications, edit the [circleci config](/.circleci/config.yml).
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+<a href="https://www.buymeacoffee.com/drkostas" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
