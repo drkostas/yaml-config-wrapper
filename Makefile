@@ -26,15 +26,17 @@ all:
 	$(MAKE) help
 help:
 	@echo
-	@echo "-----------------------------------------------------------------------------------------------------------"
-	@echo "                                              DISPLAYING HELP                                              "
-	@echo "-----------------------------------------------------------------------------------------------------------"
+	@echo "-------------------------------------------------------------------------------------------"
+	@echo "                                      DISPLAYING HELP                                      "
+	@echo "-------------------------------------------------------------------------------------------"
 	@echo "Run: make <make recipe> [env=<conda|venv>]"
 	@echo
 	@echo "make help"
 	@echo "       Display this message"
 	@echo "make release [env=<conda|venv>]"
 	@echo "       Run pypi conda_release fastrelease_bump_version"
+	@echo "make release_requirements [env=<conda|venv>]"
+	@echo "       Install fastrelease twine and conda-build"
 	@echo "make pypi [env=<conda|venv>]"
 	@echo "       Run dist and upload using twine"
 	@echo "make dist [env=<conda|venv>]"
@@ -47,15 +49,18 @@ help:
 	@echo "       Create a new conda env or venv for the specified python version"
 	@echo "make delete_env [env=<conda|venv>]"
 	@echo "       Delete the current conda env or venv"
-	@echo "-----------------------------------------------------------------------------------------------------------"
-
+	@echo "-------------------------------------------------------------------------------------------"
 release:
+	$(MAKE) release_requirements
 	$(MAKE) pypi
 	#$(MAKE) conda_release
 	#fastrelease_bump_version
+release_requirements:
+	$(BIN)/pip install fastrelease twine conda-build
 pypi:
 	$(MAKE) dist
-	twine upload --repository pypitest dist/*
+	#twine upload --repository pypitest dist/*
+	twine upload --repository pypi dist/*
 conda_release:
 	fastrelease_conda_package --upload_user drkostas
 dist:
