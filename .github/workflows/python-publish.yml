@@ -12,9 +12,6 @@ on:
   release:
     types: [published]
     
-if: 
-  github.event_name == 'push' && startsWith(github.ref, 'refs/tags')
-  
 jobs:
   deploy:
 
