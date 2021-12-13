@@ -5,7 +5,7 @@
 
 ## About <a name = "about"></a>
 
-A YAML configuration wrapper.
+A YAML configuration wrapper. [PYPI Package](https://pypi.org/manage/project/yaml-config-wrapper/releases/)
 
 ## Table of Contents
 
