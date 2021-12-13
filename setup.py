@@ -1,8 +1,24 @@
+import os
 from pkg_resources import parse_version
 from configparser import ConfigParser
 import setuptools
 
 assert parse_version(setuptools.__version__) >= parse_version('36.2')
+
+
+class CleanCommand(setuptools.Command):
+    """Custom clean command to tidy up the project root."""
+    user_options = []
+
+    def initialize_options(self):
+        pass
+
+    def finalize_options(self):
+        pass
+
+    def run(self):
+        os.system('rm -vrf ./build ./dist ./*.pyc ./*.tgz ./*.egg-info')
+
 
 # note: all settings are in settings.ini; edit there, not here
 config = ConfigParser(delimiters=['='])
@@ -25,6 +41,7 @@ py_versions = '2.0 2.1 2.2 2.3 2.4 2.5 2.6 2.7 3.0 3.1 3.2 3.3 3.4 3.5 3.6 3.7 3
 with open(cfg.get('requirements', '')) as f:
     requirements = f.readlines()
 
+data_files = cfg['data_files'].split()
 lic = licenses[cfg['license']]
 min_python = cfg['min_python']
 
@@ -41,11 +58,19 @@ setuptools.setup(
     url=cfg['git_url'],
     packages=setuptools.find_packages(),
     include_package_data=True,
+    data_files=[('', data_files)],
+    test_suite='tests',
     install_requires=requirements,
+    setup_requires=requirements,
+    tests_require=requirements,
+    cmdclass={
+        'clean': CleanCommand,
+    },
     dependency_links=cfg.get('dep_links', '').split(),
     python_requires='>=' + cfg['min_python'],
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
     zip_safe=False,
+    version=cfg.get('version'),
     entry_points={'console_scripts': cfg.get('console_scripts', '').split()},
     **setup_cfg)
