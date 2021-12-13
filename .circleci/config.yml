@@ -12,4 +12,4 @@ jobs: # A basic unit of work in a run
       - run: conda activate yaml_config_wrapper
       - run: make dist
       - run: make tests
-      - run: make release
+#      - run: make release

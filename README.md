@@ -1,4 +1,4 @@
-# Starter<img src='https://github.com/drkostas/starter/blob/master/img/snek.png' align='right' width='180' height='104'>
+# YAML Config Wrapper
 
 [![CircleCI](https://circleci.com/gh/drkostas/yaml_config_wrapper/tree/master.svg?style=svg)](https://circleci.com/gh/drkostas/yaml_config_wrapper/tree/master)
 [![GitHub license](https://img.shields.io/badge/license-Apache-blue.svg)](https://raw.githubusercontent.com/drkostas/yaml_config_wrapper/master/LICENSE)
