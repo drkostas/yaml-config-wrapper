@@ -19,7 +19,6 @@ A YAML configuration wrapper.
     + [Run the Unit Tests](#unit_tests)
 + [Continuous Integration](#ci)
 + [License](#license)
-+
 
 ## Using the library <a name = "using"></a>
 
