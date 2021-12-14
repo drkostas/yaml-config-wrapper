@@ -20,12 +20,10 @@ class Configuration:
 
     def __init__(self, config_src: Union[TextIOWrapper, StringIO, str],
                  config_schema_path: str = None):
-        """
-       The basic constructor. Creates a new instance of the Configuration class.
-
-        Args:
-            config_src: The path, file or StringIO object of the configuration to load
-            config_schema_path: The path, file or StringIO object of the configuration validation file
+        """ The basic constructor. Creates a new instance of the Configuration class.
+        :param config_src: The path, file or StringIO object of the configuration to load
+        :param config_schema_path: The path, file or StringIO object
+                                   of the configuration validation file
         """
 
         # Load the predefined schema of the configuration
@@ -52,12 +50,8 @@ class Configuration:
     def load_configuration_schema(config_schema_path: str) -> Dict:
         """
         Loads the configuration schema file
-
-        Args:
-            config_schema_path: The path of the config schema
-
-        Returns:
-            configuration_schema: The loaded config schema
+        :param config_schema_path: The path of the config schema
+        :returns configuration_schema: The loaded config schema
         """
 
         if config_schema_path[0] != os.sep:
@@ -72,13 +66,10 @@ class Configuration:
             Tuple[Dict, str]:
         """
         Loads the configuration file
-        Args:
-            config_src: The path of the configuration
-            env_tag: The tag that distinguishes the env variables
-            env_pattern: The regex for finding the env variables
-
-        Returns:
-            config, config_path
+        :param config_src: The path of the configuration
+        :param env_tag: The tag that distinguishes the env variables
+        :param env_pattern: The regex for finding the env variables
+        :returns: config, config_path
         """
         pattern = re.compile(env_pattern)
         loader = yaml.SafeLoader
@@ -125,12 +116,8 @@ class Configuration:
     def get_config(self, config_name) -> List:
         """
         Returns the subconfig requested
-
-        Args:
-            config_name: The name of the subconfig
-
-        Returns:
-            sub_config: The sub_configs List
+        :param config_name: The name of the subconfig
+        :returns: The sub_config List
         """
 
         if config_name in self.config.keys():
@@ -141,11 +128,8 @@ class Configuration:
     def to_yml(self, fn: Union[str, _io.TextIOWrapper]) -> None:
         """
         Writes the configuration to a stream. For example a file.
-
-        Args:
-            fn:
-
-        Returns:
+        :param fn: The path so save the yml file
+        :returns:
         """
 
         self.config['tag'] = self.tag
@@ -162,10 +146,9 @@ class Configuration:
     def to_json(self) -> Dict:
         """
         Returns the whole config file
-
-        Returns:
-
+        Returns: Returns the current yml in a dictionary format
         """
+
         return self.config
 
     # def __getitem__(self, item):

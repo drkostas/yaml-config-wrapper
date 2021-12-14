@@ -24,12 +24,10 @@ A YAML configuration wrapper. [PYPI Package](https://pypi.org/manage/project/yam
 
 ### Installing and using the library <a name = "install_use"></a>
 
-First, you need to install the library either using pip or conda:
+First, you need to install the library either using pip:
 
 ```shell
 $ pip install yaml_config_wrapper
-# or
-$ conda install yaml_config_wrapper
 ```
 
 Then, import it and use it like so:
