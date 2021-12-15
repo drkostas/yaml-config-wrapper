@@ -1,9 +1,19 @@
 import os
+import sys
 from pkg_resources import parse_version
 from configparser import ConfigParser
 import setuptools
 
 assert parse_version(setuptools.__version__) >= parse_version('36.2')
+
+# For the cases you want a different package to be installed on local and prod environments
+LOCAL_ARG = '--test'
+if LOCAL_ARG in sys.argv:
+    index = sys.argv.index(LOCAL_ARG)  # Index of the local argument
+    sys.argv.pop(index)  # Removes the local argument in order to prevent the setup() error
+    testing = True
+else:
+    testing = False
 
 
 class CleanCommand(setuptools.Command):
@@ -24,7 +34,12 @@ class CleanCommand(setuptools.Command):
 config = ConfigParser(delimiters=['='])
 config.read('settings.ini')
 cfg = config['DEFAULT']
-cfg_keys = 'version description keywords author author_email'.split()
+if testing:
+    lib_version = cfg['testing_version']
+else:
+    lib_version = cfg['version']
+
+cfg_keys = 'description keywords author author_email'.split()
 expected = cfg_keys + "lib_name user branch license status min_python audience language".split()
 for o in expected:
     assert o in cfg, "missing expected setting: {}".format(o)
@@ -65,4 +80,5 @@ setuptools.setup(
     long_description_content_type='text/markdown',
     zip_safe=False,
     entry_points={'console_scripts': cfg.get('console_scripts', '').split()},
+    version=lib_version,
     **setup_cfg)
