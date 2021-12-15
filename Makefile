@@ -55,17 +55,25 @@ release:
 	$(MAKE) pypi
 	#$(MAKE) conda_release
 	#fastrelease_bump_version
+release_test:
+	$(MAKE) release_requirements
+	$(MAKE) pypi_test
 release_requirements:
 	$(BIN)/pip install fastrelease twine conda-build
 pypi:
 	$(MAKE) dist
-	#twine upload --repository pypitest dist/*
 	twine upload --repository pypi dist/*
+pypi_test:
+	$(MAKE) dist_test
+	twine upload --repository pypitest dist/* --verbose
 conda_release:
 	fastrelease_conda_package --upload_user drkostas
 dist:
 	$(MAKE) clean
 	python setup.py sdist bdist_wheel
+dist_test:
+	$(MAKE) clean
+	python setup.py sdist bdist_wheel --test
 clean:
 	python setup.py clean
 tests:
