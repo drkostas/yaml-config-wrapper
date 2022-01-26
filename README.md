@@ -5,7 +5,8 @@
 
 ## About <a name = "about"></a>
 
-A YAML configuration wrapper. [PYPI Package](https://pypi.org/manage/project/yaml-config-wrapper/releases/)
+A YAML configuration
+wrapper. [PYPI Package](https://pypi.org/project/yaml-config-wrapper/)
 
 ## Table of Contents
 
@@ -14,7 +15,7 @@ A YAML configuration wrapper. [PYPI Package](https://pypi.org/manage/project/yam
     + [Creating a config file](#configuration)
     + [Set the required environment variables](#env_variables)
 + [Manually install the library](#manual_install)
-    + [Prerequisites](#configuration)
+    + [Prerequisites](#prerequisites)
     + [Install the requirements](#installing_req)
     + [Run the Unit Tests](#unit_tests)
 + [Continuous Integration](#ci)
@@ -42,7 +43,9 @@ conf = Configuration(config_src='confs/template_conf.yml',
 
 ### Creating a config file <a name = "configuration"></a>
 
-There are two already example yml configs under [confs](confs). An example structure is the following:
+There are two already example yml configs
+under [confs](https://github.com/drkostas/yaml-config-wrapper/tree/master/confs). An example structure
+is the following:
 
 ```yaml
 tag: production
@@ -69,7 +72,9 @@ The `!ENV` flag indicates that you are passing an environmental value to this at
 the values/environmental var names as you wish.
 
 There is also the option to create a validation schema the enforces a specific yaml structure. The
-default dummy version is the [default_schema.json](https://raw.githubusercontent.com/drkostas/yaml-config-wrapper/master/yaml_config_wrapper/default_schema.json) file.
+default dummy version is
+the [default_schema.json](https://raw.githubusercontent.com/drkostas/yaml-config-wrapper/master/yaml_config_wrapper/default_schema.json)
+file.
 
 ### Set the required environment variables <a name = "env_variables"></a>
 
@@ -86,8 +91,9 @@ $ export EMAIL_ADDRESS=Gmail Bot <foobar@gmail.com>
 $ export GMAIL_API_KEY=123
 ```
 
-The best way to do that, is to create a .env file ([example](https://raw.githubusercontent.com/drkostas/yaml-config-wrapper/master/env_example)), and source it before
-running the code.
+The best way to do that, is to create a .env
+file ([example](https://raw.githubusercontent.com/drkostas/yaml-config-wrapper/master/env_example)),
+and source it before running the code.
 
 ## Manually install the library <a name = "manual_install"></a>
 
@@ -113,8 +119,9 @@ $ echo $SHELL
 
 ### Install the requirements <a name = "installing_req"></a>
 
-All the installation steps are being handled by the [Makefile](https://raw.githubusercontent.com/drkostas/yaml-config-wrapper/master/Makefile). First, create a file
-called `~/.pypirc` with your pypi login details, as follows:
+All the installation steps are being handled by
+the [Makefile](https://raw.githubusercontent.com/drkostas/yaml-config-wrapper/master/Makefile). First,
+create a file called `~/.pypirc` with your pypi login details, as follows:
 
 ```
 [pypi]
@@ -122,7 +129,8 @@ username = your_pypi_username
 password = your_pypi_password
 ```
 
-Then, modify the python version and everything else you need in the [settings.ini](https://raw.githubusercontent.com/drkostas/yaml-config-wrapper/master/settings.ini).
+Then, modify the python version and everything else you need in
+the [settings.ini](https://raw.githubusercontent.com/drkostas/yaml-config-wrapper/master/settings.ini).
 
 Finally, execute the following commands:
 
@@ -147,10 +155,14 @@ check the [setup guide](https://circleci.com/docs/2.0/language-python/).
 
 Again, you should set
 the [above-mentioned environmental variables](#env_variables) ([reference](https://circleci.com/docs/2.0/env-vars/#setting-an-environment-variable-in-a-context))
-and for any modifications, edit the [circleci config](https://raw.githubusercontent.com/drkostas/yaml-config-wrapper/master/.circleci/config.yml).
+and for any modifications, edit
+the [circleci config](https://raw.githubusercontent.com/drkostas/yaml-config-wrapper/master/.circleci/config.yml)
+.
 
 ## License <a name = "license"></a>
 
-This project is licensed under the MIT License - see the [LICENSE](https://raw.githubusercontent.com/drkostas/yaml-config-wrapper/master/LICENSE) file for details.
+This project is licensed under the MIT License - see
+the [LICENSE](https://raw.githubusercontent.com/drkostas/yaml-config-wrapper/master/LICENSE) file for
+details.
 
 <a href="https://www.buymeacoffee.com/drkostas" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
