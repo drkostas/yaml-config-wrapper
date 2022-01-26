@@ -83,4 +83,4 @@ create_env:
 delete_env:
 	@eval $(DELETE_COMMAND)
 
-.PHONY: all help release conda_release pypi clean dist tests create_env delete_env
+.PHONY: all help release release_requirements conda_release pypi clean dist tests create_env delete_env dist_test pypi_test release_test
