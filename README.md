@@ -19,6 +19,7 @@ wrapper. [PYPI Package](https://pypi.org/project/yaml-config-wrapper/)
     + [Install the requirements](#installing_req)
     + [Run the Unit Tests](#unit_tests)
 + [Continuous Integration](#ci)
++ [Update PyPI package](#pypi)
 + [License](#license)
 
 ## Using the library <a name = "using"></a>
@@ -98,8 +99,7 @@ and source it before running the code.
 ## Manually install the library <a name = "manual_install"></a>
 
 These instructions will get you a copy of the project up and running on your local machine for
-development and testing purposes. See deployment for notes on how to deploy the project on a live
-system.
+development and testing purposes.
 
 ### Prerequisites <a name = "prerequisites"></a>
 
@@ -120,25 +120,20 @@ $ echo $SHELL
 ### Install the requirements <a name = "installing_req"></a>
 
 All the installation steps are being handled by
-the [Makefile](https://raw.githubusercontent.com/drkostas/yaml-config-wrapper/master/Makefile). First,
-create a file called `~/.pypirc` with your pypi login details, as follows:
+the [Makefile](https://raw.githubusercontent.com/drkostas/yaml-config-wrapper/master/Makefile).
 
-```
-[pypi]
-username = your_pypi_username
-password = your_pypi_password
-```
-
-Then, modify the python version and everything else you need in
+First, modify the python version (`min_python`) and everything else you need in
 the [settings.ini](https://raw.githubusercontent.com/drkostas/yaml-config-wrapper/master/settings.ini).
 
-Finally, execute the following commands:
+Then, execute the following commands:
 
 ```ShellSession
 $ make create_env
 $ conda activate yaml_config_wrapper
-$ make release
+$ make dist
 ```
+
+Now you are ready to use and modify the library.
 
 ### Run the Unit Tests <a name = "unit_tests"></a>
 
@@ -158,6 +153,31 @@ the [above-mentioned environmental variables](#env_variables) ([reference](https
 and for any modifications, edit
 the [circleci config](https://raw.githubusercontent.com/drkostas/yaml-config-wrapper/master/.circleci/config.yml)
 .
+
+## Update PyPI package <a name = "pypi"></a>
+
+This is mainly for future reference for the developers of this project. First,
+create a file called `~/.pypirc` with your pypi login details, as follows:
+
+```
+[pypi]
+username = your_pypi_username
+password = your_pypi_password
+```
+
+Then, modify the python version (`min_python`), project status (`status`), release version (`version`) 
+and everything else you need in
+the [settings.ini](https://raw.githubusercontent.com/drkostas/yaml-config-wrapper/master/settings.ini).
+
+Finally, execute the following commands:
+
+```ShellSession
+$ make create_env
+$ conda activate yaml_config_wrapper
+$ make release
+```
+
+For a dev release, change the `testing_version` and instead of `make release`, run `make release_test`.
 
 ## License <a name = "license"></a>
 
