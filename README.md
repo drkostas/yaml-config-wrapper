@@ -1,7 +1,7 @@
 # YAML Config Wrapper
 
 [![CircleCI](https://circleci.com/gh/drkostas/yaml-config-wrapper/tree/master.svg?style=svg)](https://circleci.com/gh/drkostas/yaml-config-wrapper/tree/master)
-[![GitHub license](https://img.shields.io/badge/license-Apache-blue.svg)](https://raw.githubusercontent.com/drkostas/yaml-config-wrapper/master/LICENSE)
+[![GitHub license](https://img.shields.io/badge/license-Apache-blue.svg)](https://github.com/drkostas/yaml-config-wrapper/blob/master/LICENSE)
 
 ## About <a name = "about"></a>
 
@@ -74,7 +74,7 @@ the values/environmental var names as you wish.
 
 There is also the option to create a validation schema the enforces a specific yaml structure. The
 default dummy version is
-the [default_schema.json](https://raw.githubusercontent.com/drkostas/yaml-config-wrapper/master/yaml_config_wrapper/default_schema.json)
+the [default_schema.json](https://github.com/drkostas/yaml-config-wrapper/blob/master/yaml_config_wrapper/default_schema.json)
 file.
 
 ### Set the required environment variables <a name = "env_variables"></a>
@@ -93,7 +93,7 @@ $ export GMAIL_API_KEY=123
 ```
 
 The best way to do that, is to create a .env
-file ([example](https://raw.githubusercontent.com/drkostas/yaml-config-wrapper/master/env_example)),
+file ([example](https://github.com/drkostas/yaml-config-wrapper/blob/master/env_example)),
 and source it before running the code.
 
 ## Manually install the library <a name = "manual_install"></a>
@@ -120,10 +120,10 @@ $ echo $SHELL
 ### Install the requirements <a name = "installing_req"></a>
 
 All the installation steps are being handled by
-the [Makefile](https://raw.githubusercontent.com/drkostas/yaml-config-wrapper/master/Makefile).
+the [Makefile](https://github.com/drkostas/yaml-config-wrapper/blob/master/Makefile).
 
 First, modify the python version (`min_python`) and everything else you need in
-the [settings.ini](https://raw.githubusercontent.com/drkostas/yaml-config-wrapper/master/settings.ini).
+the [settings.ini](https://github.com/drkostas/yaml-config-wrapper/blob/master/settings.ini).
 
 Then, execute the following commands:
 
@@ -151,7 +151,7 @@ check the [setup guide](https://circleci.com/docs/2.0/language-python/).
 Again, you should set
 the [above-mentioned environmental variables](#env_variables) ([reference](https://circleci.com/docs/2.0/env-vars/#setting-an-environment-variable-in-a-context))
 and for any modifications, edit
-the [circleci config](https://raw.githubusercontent.com/drkostas/yaml-config-wrapper/master/.circleci/config.yml)
+the [circleci config](https://github.com/drkostas/yaml-config-wrapper/blob/master/.circleci/config.yml)
 .
 
 ## Update PyPI package <a name = "pypi"></a>
@@ -167,7 +167,7 @@ password = your_pypi_password
 
 Then, modify the python version (`min_python`), project status (`status`), release version (`version`) 
 and everything else you need in
-the [settings.ini](https://raw.githubusercontent.com/drkostas/yaml-config-wrapper/master/settings.ini).
+the [settings.ini](https://github.com/drkostas/yaml-config-wrapper/blob/master/settings.ini).
 
 Finally, execute the following commands:
 
@@ -182,7 +182,7 @@ For a dev release, change the `testing_version` and instead of `make release`, r
 ## License <a name = "license"></a>
 
 This project is licensed under the MIT License - see
-the [LICENSE](https://raw.githubusercontent.com/drkostas/yaml-config-wrapper/master/LICENSE) file for
+the [LICENSE](https://github.com/drkostas/yaml-config-wrapper/blob/master/LICENSE) file for
 details.
 
 <a href="https://www.buymeacoffee.com/drkostas" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
