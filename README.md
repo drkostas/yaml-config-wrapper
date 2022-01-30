@@ -181,7 +181,7 @@ For a dev release, change the `testing_version` and instead of `make release`, r
 
 ## License <a name = "license"></a>
 
-This project is licensed under the MIT License - see
+This project is licensed under the Apache License - see
 the [LICENSE](https://github.com/drkostas/yaml-config-wrapper/blob/master/LICENSE) file for
 details.
 
