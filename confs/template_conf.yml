@@ -11,7 +11,7 @@ datastore:
       db_name: mydb
       port: 3306
     type: mysql
-emailer:
+pyemail-sender:
   - config:
       email_address: foo@gmail.com
       api_key: 123
