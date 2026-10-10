@@ -1,3 +1,5 @@
+![yaml-config-wrapper](docs/images/banner.png)
+
 # YAML Config Wrapper
 [![Downloads](https://static.pepy.tech/personalized-badge/yaml-config-wrapper?period=total&units=international_system&left_color=grey&right_color=red&left_text=Downloads)](https://pepy.tech/project/yaml-config-wrapper)
 [![GitHub license](https://img.shields.io/badge/license-Apache-blue.svg)](https://github.com/drkostas/yaml-config-wrapper/blob/master/LICENSE)
