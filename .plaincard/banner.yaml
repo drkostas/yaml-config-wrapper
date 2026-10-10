@@ -1,0 +1,14 @@
+kind: banner
+name: yaml-config-wrapper
+line: Loads a YAML config into Python, checks it against a schema and fills in env
+  variables.
+accent: amber
+diagram:
+- doc:
+    label: config.yml
+- arrow
+- check:
+    label: schema
+- arrow
+- box:
+    text: python config
